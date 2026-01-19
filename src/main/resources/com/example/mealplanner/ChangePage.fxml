@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #434545;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mealplanner.EditMealController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="241.0" style="-fx-background-color: #2E2E2E;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="buttonEdit" layoutX="51.0" layoutY="67.0" mnemonicParsing="false" onMouseEntered="#onButtonHover" onMouseExited="#onButtonLeave" prefHeight="53.0" prefWidth="146.0" style="-fx-background-color: #095252;" text="Edit Week" textFill="WHITE" AnchorPane.topAnchor="67.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="buttonAdd" layoutX="51.0" layoutY="172.0" mnemonicParsing="false" onMouseEntered="#onButtonHover" onMouseExited="#onButtonLeave" prefHeight="53.0" prefWidth="146.0" style="-fx-background-color: #095252;" text="Add Meal" textFill="WHITE" AnchorPane.topAnchor="200.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="buttonExit" layoutX="51.0" layoutY="595.0" mnemonicParsing="false" onAction="#switchFrontPage" onMouseEntered="#onButtonHover" onMouseExited="#onButtonLeave" prefHeight="53.0" prefWidth="146.0" style="-fx-background-color: #095252;" text="Exit" textFill="WHITE" AnchorPane.bottomAnchor="50.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="mealTitle" layoutX="341.0" layoutY="38.0" prefHeight="36.0" prefWidth="180.0" scaleX="1.5" scaleY="1.5" text="Meal Name" textFill="WHITE" visible="false" AnchorPane.topAnchor="58.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="mealTF" layoutX="368.0" layoutY="108.0" prefHeight="17.0" prefWidth="282.0" promptText="Enter Meal name" scaleX="1.5" scaleY="1.5" style="-fx-background-color: white;" visible="false" AnchorPane.topAnchor="108.0" />
+      <Pane layoutX="241.0" prefHeight="700.0" prefWidth="4.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Label fx:id="ingredientTitle" layoutX="341.0" layoutY="165.0" prefHeight="36.0" prefWidth="180.0" scaleX="1.5" scaleY="1.5" text="Ingredient" textFill="WHITE" visible="false">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ingredientTF" layoutX="331.0" layoutY="216.0" prefHeight="25.0" prefWidth="135.0" promptText="Enter Ingredient name" scaleX="1.5" scaleY="1.5" style="-fx-background-color: white;" visible="false" />
+      <Button fx:id="buttonIngredientAdd" layoutX="308.0" layoutY="262.0" mnemonicParsing="false" onMouseEntered="#onButtonHover" onMouseExited="#onButtonLeave" scaleX="1.5" scaleY="1.5" style="-fx-background-color: #22BEF3;" text="Add" visible="false">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.03529411926865578" green="0.32156863808631897" blue="0.32156863808631897" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <ListView fx:id="listIngredients" editable="true" layoutX="782.0" layoutY="183.0" prefHeight="276.0" prefWidth="293.0" style="-fx-background-color: #565757;" visible="false" AnchorPane.topAnchor="183.0" />
+      <TextField fx:id="ingredientQuantityTF" layoutX="551.0" layoutY="216.0" prefHeight="25.0" prefWidth="135.0" promptText="E.g (10 gram, 500 ml, .." scaleX="1.5" scaleY="1.5" style="-fx-background-color: white;" visible="false" />
+      <ListView fx:id="ingredientString" layoutX="774.0" layoutY="492.0" prefHeight="130.0" prefWidth="175.0" visible="false" />
+      <ListView fx:id="quantityString" layoutX="966.0" layoutY="488.0" prefHeight="142.0" prefWidth="193.0" visible="false" />
+      <Button fx:id="buttonRemove" layoutX="910.0" layoutY="472.0" mnemonicParsing="false" onMouseEntered="#onButtonHover" onMouseExited="#onButtonLeave" scaleX="1.5" scaleY="1.5" style="-fx-background-color: #22BEF3;" text="remove" visible="false">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.03529411926865578" green="0.32156863808631897" blue="0.32156863808631897" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <TextArea fx:id="recipeTF" layoutX="299.0" layoutY="359.0" prefHeight="266.0" prefWidth="423.0" promptText="Enter the recipe!" visible="false" AnchorPane.topAnchor="359.0" />
+      <SplitMenuButton fx:id="typeSelection" layoutX="299.0" layoutY="309.0" mnemonicParsing="false" onContextMenuRequested="#selectType" text="Type of Meal" visible="false" AnchorPane.topAnchor="309.0">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#selectType" text="Regular" />
+          <MenuItem mnemonicParsing="false" onAction="#selectType" text="Vegeterian" />
+           <MenuItem mnemonicParsing="false" onAction="#selectType" text="Vegan" />
+        </items>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </SplitMenuButton>
+      <Label fx:id="errorName" layoutX="737.0" layoutY="112.0" prefHeight="17.0" prefWidth="146.0" text="Please enter a Meal Name!" textFill="RED" visible="false" />
+      <Label fx:id="errorRecipe" layoutX="722.0" layoutY="466.0" prefWidth="203.0" text="Please enter a Recipe!" textFill="RED" visible="false" />
+      <Label fx:id="errorIngredient" layoutX="371.0" layoutY="266.0" prefHeight="17.0" prefWidth="116.0" text="Pls add Ingredients!" textFill="RED" visible="false" />
+      <Button fx:id="buttonAdd1" layoutX="51.0" layoutY="221.0" mnemonicParsing="false" onAction="#switchToEditMealPage" onMouseEntered="#onButtonHover" onMouseExited="#onButtonLeave" prefHeight="53.0" prefWidth="146.0" style="-fx-background-color: #095252;" text="Edit Meal" textFill="WHITE" AnchorPane.topAnchor="300.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="errorDouble" layoutX="856.0" layoutY="156.0" prefHeight="17.0" prefWidth="146.0" text="Ingredient already added!" textFill="RED" visible="false" />
+      <TableView fx:id="tableView" layoutX="1175.0" layoutY="10.0" maxHeight="1.0" maxWidth="1.0" prefHeight="0.0" prefWidth="21.0" visible="false">
+         <columns>
+            <TableColumn fx:id="tableColumn" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" text="Meals" visible="false" />
+         </columns>
+      </TableView>
+      <Label fx:id="macroTitle" layoutX="294.0" layoutY="40.0" prefHeight="36.0" prefWidth="180.0" text="Macronutrients" textFill="WHITE" visible="false">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="servingTF" layoutX="296.0" layoutY="167.0" prefHeight="25.0" prefWidth="146.0" visible="false" />
+      <Label fx:id="caloriesTitle" layoutX="294.0" layoutY="237.0" prefHeight="36.0" prefWidth="186.0" text="Calories per 100g" textFill="WHITE" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="caloriesTF" layoutX="294.0" layoutY="273.0" prefHeight="25.0" prefWidth="146.0" visible="false" />
+      <Label fx:id="carboTitle" layoutX="530.0" layoutY="238.0" prefHeight="36.0" prefWidth="277.0" text="Carbohydrates per 100g" textFill="WHITE" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="carbohydratesTF" layoutX="530.0" layoutY="274.0" prefHeight="25.0" prefWidth="146.0" visible="false" />
+      <Label fx:id="proteinTitle" layoutX="294.0" layoutY="320.0" prefHeight="36.0" prefWidth="186.0" text="Protein per 100g" textFill="WHITE" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="proteinTF" layoutX="294.0" layoutY="356.0" prefHeight="25.0" prefWidth="146.0" visible="false" />
+      <Label fx:id="fatTitle" layoutX="531.0" layoutY="321.0" prefHeight="36.0" prefWidth="146.0" text="Fat per 100g" textFill="WHITE" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fatTF" layoutX="530.0" layoutY="357.0" prefHeight="25.0" prefWidth="146.0" visible="false" />
+      <Label fx:id="errorNutrients" layoutX="696.0" layoutY="441.0" prefHeight="17.0" prefWidth="202.0" text="Please fill all textfields with numbers!" textFill="RED" visible="false" />
+      <Label fx:id="servingTitle" layoutX="296.0" layoutY="130.0" prefHeight="36.0" prefWidth="220.0" text="Serving size in g" textFill="WHITE" visible="false">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonEditMeal" layoutX="576.0" layoutY="178.0" mnemonicParsing="false" onAction="#setupChange" onMouseEntered="#onButtonHover" onMouseExited="#onButtonLeave" prefHeight="65.0" prefWidth="241.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: #22BEF3;" text="Edit Recipe">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.03529411926865578" green="0.32156863808631897" blue="0.32156863808631897" />
+               </color>
+            </InnerShadow>
+         </effect>
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonEditMacro" layoutX="576.0" layoutY="385.0" mnemonicParsing="false" onAction="#setupMacro" onMouseEntered="#onButtonHover" onMouseExited="#onButtonLeave" prefHeight="65.0" prefWidth="241.0" scaleX="1.5" scaleY="1.5" style="-fx-background-color: #22BEF3;" text="Edit Macro">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.03529411926865578" green="0.32156863808631897" blue="0.32156863808631897" />
+               </color>
+            </InnerShadow>
+         </effect>
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
