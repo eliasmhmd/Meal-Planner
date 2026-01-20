@@ -32,19 +32,19 @@ Entwickelt als universitäres Projekt im Informatikstudium an der Frankfurt Univ
    ```bash
    git clone https://github.com/eliasmhmd/Meal-Planner.git
    cd Meal-Planner
-## MySQL-Datenbank einrichten
+2. **MySQL-Datenbank einrichten**
 - Starte deinen MySQL-Server (z. B. über MySQL Workbench, XAMPP oder Kommandozeile).
 - Erstelle eine neue Datenbank:
 ```SQL
 CREATE DATABASE meal_planner CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
-Optional: Erstelle einen dedizierten Benutzer:
+- Optional: Erstelle einen dedizierten Benutzer:
 ```SQL
 CREATE USER 'mealuser'@'localhost' IDENTIFIED BY 'dein_sicheres_passwort';
 GRANT ALL PRIVILEGES ON meal_planner.* TO 'mealuser'@'localhost';
 FLUSH PRIVILEGES;
 ```
-## Datenbank-Verbindung konfigurieren
+3. **Datenbank-Verbindung konfigurieren**
 - Öffne die Datei ```src/main/java/com/example/mealplanner/DatabaseConnection.java``` und passe die Zugangsdaten an:
 ```Java
 String databaseName = "meal_planner";
@@ -52,17 +52,16 @@ String databaseUser = "root";  // oder 'mealuser'
 String databasePassword = "dein_sicheres_passwort";
 String url = "jdbc:mysql://localhost/" + databaseName;
 ```
-- Hinweis: Passe bei Zeitzonen-Problemen den URL-Parameter an (z. B. ?serverTimezone=UTC hinzufügen).
-## Projekt bauen
+4. **Projekt bauen**
 - Mit dem enthaltenen Maven Wrapper (keine globale Maven-Installation nötig):
 ```Bash
 ./mvnw clean install
 ```
-Oder mit installiertem Maven:
+- Oder mit installiertem Maven:
 ```Bash
 mvn clean install
 ```
-Anwendung starten
+5. **Anwendung starten**
 ```Bash
 ./mvnw exec:java -Dexec.mainClass="com.example.mealplanner.Main"
 ```
@@ -70,8 +69,8 @@ Anwendung starten
 - Erwartetes Ergebnis: Die Swing-GUI öffnet sich und du kannst Mahlzeiten hinzufügen, bearbeiten und Nährwerte einsehen.
 ## Troubleshooting
 - Connection is null → MySQL-Server läuft nicht, Zugangsdaten falsch oder Datenbank existiert nicht.
-- ClassNotFoundException: com.mysql.cj.jdbc.Driver → Maven hat den Treiber nicht geladen → mvn dependency:resolve ausführen.
-- Zeitzonen-Fehler → Füge ?serverTimezone=UTC zur JDBC-URL hinzu.
+- ClassNotFoundException: com.mysql.cj.jdbc.Driver → Maven hat den Treiber nicht geladen → ```mvn dependency:resolve``` ausführen.
+- Zeitzonen-Fehler → Füge ```?serverTimezone=UTC``` zur JDBC-URL hinzu.
 - Tabellen nicht gefunden → Die App erstellt Tabellen ggf. automatisch beim ersten Start. Falls nicht, siehe nächster Abschnitt.
 
 ## Datenbankschema
@@ -106,3 +105,4 @@ CREATE TABLE macronutritions (
     FOREIGN KEY (meal_name) REFERENCES meal(name)
 );
 ```
+
