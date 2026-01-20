@@ -5,7 +5,6 @@ Entwickelt als universitäres Projekt im Informatikstudium an der Frankfurt Univ
 
 ![Hauptfenster](screenshots/main.png)  
 ![Mahlzeit hinzufügen](screenshots/add_meal.png)  
-*(Screenshots kommen bald – siehe unten)*
 
 ## Features
 
@@ -20,7 +19,6 @@ Entwickelt als universitäres Projekt im Informatikstudium an der Frankfurt Univ
 - Java (JDK 17)
 - Swing (GUI)
 - MySQL + JDBC
-- IntelliJ IDEA als IDE
 
 ## Voraussetzungen
 
@@ -34,3 +32,4 @@ Entwickelt als universitäres Projekt im Informatikstudium an der Frankfurt Univ
    ```bash
    git clone https://github.com/eliasmhmd/Meal-Planner.git
    cd Meal-Planner
+
