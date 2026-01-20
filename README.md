@@ -1,6 +1,6 @@
 # Meal Planner
 
-Eine Desktop-Anwendung zur Planung und Verwaltung von Mahlzeiten.  
+Eine Desktop-Anwendung zur Planung und Verwaltung von Mahlzeiten mit automatischem Nährwert-Tracking (Kalorien, Proteine, Kohlenhydrate, Fette).  
 Entwickelt als universitäres Projekt im Informatikstudium an der Frankfurt University of Applied Sciences (2023).
 
 ![Hauptfenster](screenshots/main.png)  
@@ -9,6 +9,7 @@ Entwickelt als universitäres Projekt im Informatikstudium an der Frankfurt Univ
 ## Features
 
 - Erstellen, Bearbeiten und Löschen von Zutaten und Mahlzeiten
+- Automatische Berechnung von Kalorien und Makronährstoffen
 - Tages- und Wochenübersicht der Nährwerte
 - Persistente Speicherung in MySQL-Datenbank
 - Benutzerfreundliche GUI mit Java Swing
@@ -31,5 +32,3 @@ Entwickelt als universitäres Projekt im Informatikstudium an der Frankfurt Univ
    ```bash
    git clone https://github.com/eliasmhmd/Meal-Planner.git
    cd Meal-Planner
-
-
